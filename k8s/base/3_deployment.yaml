@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: load-generator
+spec:
+  selector:
+    matchLabels:
+      job: load-generator
+  template:
+    metadata:
+      labels:
+        job: load-generator
+    spec:
+      containers:
+        - name: locust
+          image: gcr.io/vino9-276317/demoapp/load-generator
+          env:
+            - name: TARGET_API
+              value: "dashboard"
+            - name: USERS
+              value: "10"
+            - name: USE_DUMMY_ID
+              value: "true"
