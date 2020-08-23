@@ -10,7 +10,7 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.RUN_PROJECT }}
-  SERVICE_NAME: ext-cust-svc
+  SERVICE_NAME: load-generator
   TAG: ${{ github.sha }}
 
 
